@@ -1,0 +1,19 @@
+{
+  "name": "@sashak007/symbol-ipsum",
+  "version": "0.0.1",
+  "description": "this is a module to generate words that include special characters (symbols and character entities) based on utf-8 encoding. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sashak007/symbolIpsum.git"
+  },
+  "author": "Natasha Dykes <natasha.sha.shaaa@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sashak007/symbolIpsum/issues"
+  },
+  "homepage": "https://github.com/sashak007/symbolIpsum#readme"
+}

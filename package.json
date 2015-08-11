@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/sashak007/symbolIpsum/issues"
   },
-  "homepage": "https://github.com/sashak007/symbolIpsum#readme"
+  "homepage": "https://github.com/sashak007/symbolIpsum#readme",
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "mocha": "^2.2.5"
+  }
 }

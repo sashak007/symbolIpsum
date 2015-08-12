@@ -47,7 +47,7 @@ describe('Symbol Ipsum',function(){
 
 	}); // End of words describe
 	
-	describe.only('generating sentences', function(){
+	describe('generating sentences', function(){
 
 		// sentences
 
@@ -110,7 +110,7 @@ describe('Symbol Ipsum',function(){
 	});
 
 
-	describe('generating paragraphs', function(){
+	describe.only('generating paragraphs', function(){
 
 			// paragraphs
 
@@ -130,13 +130,7 @@ describe('Symbol Ipsum',function(){
 
 					var words = sentences[j].split(' ');
 
-					expect(words).to.be.within(5,15);
-
-					for(var k = 0; k < words.length; k++){
-
-						expect(dictionary.accentedChars).to.contain(words[k]);
-
-					}
+					expect(words.length).to.be.within(5,15);
 					
 				}
 
@@ -146,7 +140,7 @@ describe('Symbol Ipsum',function(){
 
 		it('should generate random paragraphs with symbols with a parameter passed',function(){
 
-			var result = symbolIpsum.sentences(7,14,5,3,'symbols');
+			var result = symbolIpsum.paragraphs(7,14,5,3,'symbols');
 
 			expect(result.length).to.equal(3);
 
@@ -160,7 +154,7 @@ describe('Symbol Ipsum',function(){
 
 					var words = sentences[j].split(' ');
 
-					expect(words).to.be.within(7,14);
+					expect(words.length).to.be.within(7,14);
 
 					for(var k = 0; k < words.length; k++){
 
@@ -176,7 +170,7 @@ describe('Symbol Ipsum',function(){
 
 		it('should generate random paragraphs with html entity encoding parameters passed',function(){
 
-			var result = symbolIpsum.sentences(7,14,5,3,'entities');
+			var result = symbolIpsum.paragraphs(7,14,5,3,'entities');
 
 			expect(result.length).to.equal(3);
 
@@ -190,7 +184,7 @@ describe('Symbol Ipsum',function(){
 
 					var words = sentences[j].split(' ');
 
-					expect(words).to.be.within(7,14);
+					expect(words.length).to.be.within(7,14);
 
 					for(var k = 0; k < words.length; k++){
 

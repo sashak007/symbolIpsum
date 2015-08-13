@@ -150,7 +150,7 @@ describe('Symbol Ipsum',function(){
 	});
 
 
-	describe('generating paragraphs', function(){
+	describe.only('generating paragraphs', function(){
 
 			// paragraphs
 
@@ -178,9 +178,11 @@ describe('Symbol Ipsum',function(){
 
 		});
 
-		it('should generate random paragraphs with symbols with a parameter passed',function(){
+		it.only('should generate random paragraphs with symbols with a parameter passed',function(){
 
 			var result = symbolIpsum.paragraphs(7,14,5,3,'symbols');
+
+			console.log(result[0]);
 
 			expect(result[0].length).to.equal(3);
 

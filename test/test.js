@@ -2,6 +2,7 @@
 
 var expect = require('chai').expect,
 		dictionary = require('../lib/dictionary'),
+		helper = require('../lib/helper'),
 		symbolIpsum = require('../index');
 
 describe('Symbol Ipsum',function(){
@@ -13,7 +14,25 @@ describe('Symbol Ipsum',function(){
 
 			var result = symbolIpsum.words();
 
-			expect(result.length).to.equal(10); 
+			expect(result[0].length).to.equal(10);
+
+			if(result[1] === 'symbols'){
+
+				for(var i = 0; i < result.length; i++){
+
+					expect(dictionary.accentedChars).to.contain(result[0][i]);
+
+				}
+
+			} else if(result[1] === 'entities'){
+
+				for(var i = 0; i < result.length; i++){
+
+					expect(dictionary.charEntities).to.contain(result[0][i]);
+
+				}
+
+			}
 
 		});
 
@@ -21,12 +40,12 @@ describe('Symbol Ipsum',function(){
 
 			var result = symbolIpsum.words(20,'symbols');
 
-			expect(result.length).to.equal(20); 
+			expect(result[0].length).to.equal(20); 
 
 			for(var i = 0; i < result.length; i++){
 
-				expect(dictionary.accentedChars).to.contain(result[i]);
-
+				expect(dictionary.accentedChars).to.contain(result[0][i]);
+			
 			}
 
 		});
@@ -35,12 +54,12 @@ describe('Symbol Ipsum',function(){
 
 			var result = symbolIpsum.words(20,'entities');
 
-			expect(result.length).to.equal(20); 
+			expect(result[0].length).to.equal(20); 
 
 			for(var i = 0; i < result.length; i++){
 
-				expect(dictionary.charEntities).to.contain(result[i]);
-
+				expect(dictionary.charEntities).to.contain(result[0][i]);
+			
 			}
 
 		});
@@ -55,11 +74,32 @@ describe('Symbol Ipsum',function(){
 
 			var result = symbolIpsum.sentences();
 			
-			expect(result.length).to.equal(1);
+			expect(result[0].length).to.equal(1);
 
-			var words = result[0].split(' ');
+			for(var i = 0; i < result[0].length; i++){
 
-			expect(words.length).to.be.within(5,15);
+				var words = result[0][i].split(' ');
+
+				expect(words.length).to.be.within(5,15);
+
+				if(result[1] === 'symbols'){
+
+					for(var i = 0; i < result.length; i++){
+
+						expect(dictionary.accentedChars).to.contain(words[i]);
+
+					}
+
+				} else if(result[1] === 'entities'){
+
+					for(var i = 0; i < result.length; i++){
+
+						expect(dictionary.charEntities).to.contain(words[i]);
+
+					}
+
+				}
+			}
 
 		});
 		
@@ -67,11 +107,11 @@ describe('Symbol Ipsum',function(){
 
 			var result = symbolIpsum.sentences(7,14,2,'symbols');
 
-			expect(result.length).to.equal(2);
+			expect(result[0].length).to.equal(2);
 
-			for(var i = 0; i < result.length; i++){
+			for(var i = 0; i < result[0].length; i++){
 
-				var words = result[i].split(' ');
+				var words = result[0][i].split(' ');
 
 				expect(words.length).to.be.within(7,14);
 
@@ -89,11 +129,11 @@ describe('Symbol Ipsum',function(){
 
 			var result = symbolIpsum.sentences(7,14,2,'entities');
 
-			expect(result.length).to.equal(2);
+			expect(result[0].length).to.equal(2);
 
 			for(var i = 0; i < result.length; i++){
 
-				var words = result[i].split(' ');
+				var words = result[0][i].split(' ');
 
 				expect(words.length).to.be.within(7,14);
 
@@ -110,7 +150,7 @@ describe('Symbol Ipsum',function(){
 	});
 
 
-	describe.only('generating paragraphs', function(){
+	describe('generating paragraphs', function(){
 
 			// paragraphs
 
@@ -118,11 +158,11 @@ describe('Symbol Ipsum',function(){
 
 			var result = symbolIpsum.paragraphs();
 
-			expect(result.length).to.equal(2);
+			expect(result[0].length).to.equal(2);
 
 			for(var i = 0; i < result.length; i++){
 
-				var sentences = result[i].split('. ');
+				var sentences = result[0][i].split('. ');
 
 				expect(sentences.length).to.equal(4);
 
@@ -142,11 +182,11 @@ describe('Symbol Ipsum',function(){
 
 			var result = symbolIpsum.paragraphs(7,14,5,3,'symbols');
 
-			expect(result.length).to.equal(3);
+			expect(result[0].length).to.equal(3);
 
-			for(var i = 0; i < result.length; i++){
+			for(var i = 0; i < result[0].length; i++){
 
-				var sentences = result[i].split('. ');
+				var sentences = result[0][i].split('. ');
 
 				expect(sentences.length).to.equal(5);
 
@@ -172,11 +212,11 @@ describe('Symbol Ipsum',function(){
 
 			var result = symbolIpsum.paragraphs(7,14,5,3,'entities');
 
-			expect(result.length).to.equal(3);
+			expect(result[0].length).to.equal(3);
 
 			for(var i = 0; i < result.length; i++){
 
-				var sentences = result[i].split('. ');
+				var sentences = result[0][i].split('. ');
 
 				expect(sentences.length).to.equal(5);
 

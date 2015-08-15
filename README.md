@@ -1,5 +1,9 @@
 # symbolIpsum
 
+[![Build Status](https://travis-ci.org/sashak007/symbolIpsum.svg)](https://travis-ci.org/sashak007/symbolIpsum)
+
+[![Coverage Status](https://coveralls.io/repos/sashak007/symbolIpsum/badge.svg?branch=master&service=github)](https://coveralls.io/github/sashak007/symbolIpsum?branch=master)
+
 ## Synopsis
 Symbol Ipsum is a text generator that handles utf-8 characters including accented and special character. I've included two word lists: rendered accented characters and symbols as well as entity encoded characters. 
 
@@ -31,7 +35,3 @@ There's some great text generator packages out there but I've found that they do
 symbolIpsum copyright (c) 2015 Natasha Dykes
 
 This software is hereby granted, free of charge, to any person interested. Software is 'AS IS', I absolve any liability for damages.
-
-[![Build Status](https://travis-ci.org/sashak007/symbolIpsum.svg)](https://travis-ci.org/sashak007/symbolIpsum)
-
-[![Coverage Status](https://coveralls.io/repos/sashak007/symbolIpsum/badge.svg?branch=master&service=github)](https://coveralls.io/github/sashak007/symbolIpsum?branch=master)

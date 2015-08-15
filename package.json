@@ -4,7 +4,8 @@
   "description": "this is a module to generate words that include special characters (symbols and character entities) based on utf-8 encoding. ",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test": "mocha --reporter spec",
+    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,8 @@
   "homepage": "https://github.com/sashak007/symbolIpsum#readme",
   "devDependencies": {
     "chai": "^3.2.0",
+    "coveralls": "^2.11.4",
+    "istanbul": "^0.3.17",
     "mocha": "^2.2.5"
   }
 }

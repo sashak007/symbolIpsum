@@ -24,7 +24,7 @@ There's some great text generator packages out there but I've found that they do
 
 ## Installation 	
 
-`npm install @sashak007/symbol-ipsum`
+`npm install symbol-ipsum`
 
 ## Tests
 

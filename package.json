@@ -1,5 +1,5 @@
 {
-  "name": "@sashak007/symbol-ipsum",
+  "name": "symbol-ipsum",
   "version": "0.0.1",
   "description": "this is a module to generate words that include special characters (symbols and character entities) based on utf-8 encoding. ",
   "main": "index.js",

@@ -20,7 +20,7 @@ var paragraph  = symbolIpsum.paragraphs(7,14,5,3,'symbols'); // outputs three pa
 
 ## Motivation
 
-There's some great text generator packages out there but I've found that they don't cover some pretty common test cases so I created this module to uncover any encoding issues for automated testing. 
+There's some great text generator packages out there but I've found that they don't cover some pretty common test cases, like encoded special characters, so I created this module to uncover encoding issues for automated tests. You can also utilize this to add some variety to your dummy data. 
 
 ## Installation 	
 

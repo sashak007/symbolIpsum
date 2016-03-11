@@ -5,7 +5,7 @@
 [![Coverage Status](https://coveralls.io/repos/sashak007/symbolIpsum/badge.svg?branch=master&service=github)](https://coveralls.io/github/sashak007/symbolIpsum?branch=master)
 
 ## Synopsis
-Symbol Ipsum is a text generator that handles utf-8 characters including accented and special character. I've included two word lists: rendered accented characters and symbols as well as entity encoded characters. 
+Symbol Ipsum is a text generator that handles utf-8 characters, including accented and special character. I've included two word lists: rendered accented characters and symbols as well as entity encoded characters. 
 
 ## Usage
 
@@ -20,7 +20,7 @@ var paragraph  = symbolIpsum.paragraphs(7,14,5,3,'symbols'); // outputs three pa
 
 ## Motivation
 
-There's some great text generator packages out there but I've found that they don't cover some pretty common test cases, like encoded special characters, so I created this module to uncover encoding issues for automated tests. You can also utilize this to add some variety to your dummy data. 
+There's some great text generator packages out there but I've found that they only provide ASCII alphanumeric values. For testing purposes this isn't ideal and there's a need for more comprehensive data, my goal with this module is to provide dummy data with accented character and other special characters specific to unicode.  
 
 ## Installation 	
 

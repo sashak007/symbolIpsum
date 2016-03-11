@@ -1,6 +1,6 @@
 {
   "name": "symbol-ipsum",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "this is a module to generate words that include special characters (symbols and character entities) based on utf-8 encoding. ",
   "main": "index.js",
   "scripts": {

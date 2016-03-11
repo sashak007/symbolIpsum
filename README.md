@@ -13,7 +13,7 @@ Symbol Ipsum is a text generator that handles utf-8 characters, including accent
 ```
 var symbolIpsum = require('symbolIpsum');
 
-var  text = symbolIpsum.words(6,'symbols'); // atkvæði, d’état, ¿cómo?, benåde, fußgängerübergänge, Σ
+var text = symbolIpsum.words(6,'symbols'); // atkvæði, d’état, ¿cómo?, benåde, fußgängerübergänge, Σ
 var sentence = symbolIpsum.sentences(7,14,2,'entities'); // outputs two sentences between seven to 14 words each with the entity encoding.
 var paragraph  = symbolIpsum.paragraphs(7,14,5,3,'symbols'); // outputs three paragraphs with five sentences between seven to 14 words each with rendered symbols.
 ```

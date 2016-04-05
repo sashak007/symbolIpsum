@@ -5,38 +5,32 @@ var expect      = require('chai').expect,
     symbolIpsum = require('../index');
 
 var define = function(result, charType) {
-    if(result[1] === 'symbols'){
-        for(var i = 0; i < result.length; i++) {
-          expect(dictionary.accentedChars).to.contain(result[0][i]);
-        }
-
-      } else if(result[1] === 'entities') {
-        for(var i = 0; i < result.length; i++) {
-          expect(dictionary.charEntities).to.contain(result[0][i]);
-        }
-
-      }
-    };
-
-  var verifySentences = function(result, charType, min, max) {
-    for(var i = 0; i < result.length; i++){
-      var words = result[i].split(' ');
-
-      expect(words.length).to.be.within(min, max);
-      define(result, charType);
+  if(result[1] === 'symbols') {
+    for(var i = 0; i < result.length; i++) {
+      expect(dictionary.accentedChars).to.contain(result[0][i]);
     }
-
-  },
-
-  verifyParagraph = function(result, charType, numOfSentences, min, max) {
-    for(var i = 0; i < result.length; i++){
-      var sentences = result[i].split('. ');
-
-      expect(sentences.length).to.equal(numOfSentences);
-      verifySentences(sentences, charType, min, max);    
+  } else if(result[1] === 'entities') {
+    for(var i = 0; i < result.length; i++) {
+      expect(dictionary.charEntities).to.contain(result[0][i]);
     }
+  }
+},
 
-  };
+verifySentences = function(result, charType, min, max) {
+  for(var i = 0; i < result.length; i++) {
+    var words = result[i].split(' ');
+    expect(words.length).to.be.within(min, max);
+    define(result, charType);
+  }
+},
+
+verifyParagraph = function(result, charType, numOfSentences, min, max) {
+  for(var i = 0; i < result.length; i++) {
+    var sentences = result[i].split('. ');
+    expect(sentences.length).to.equal(numOfSentences);
+    verifySentences(sentences, charType, min, max);    
+  }
+};
 
 
 describe('Symbol Ipsum', function() {
@@ -45,26 +39,20 @@ describe('Symbol Ipsum', function() {
 
     it('should generate random words if no parameter is passed', function() {
       var result = symbolIpsum.words();
-
       expect(result[0].length).to.equal(10);
       define(result[0], result[1]);
-
     });
 
     it('should generate random words with symbol and number parameter passed', function() {
       var result = symbolIpsum.words(20,'symbols');
-
       expect(result[0].length).to.equal(20); 
       define(result[0], result[1]);
-
     });
 
     it('should generate random words with html entity encoding and number parameter passed', function() {
       var result = symbolIpsum.words(20,'entities');
-
       expect(result[0].length).to.equal(20); 
       define(result[0], result[1]);
-
     });
 
   }); 
@@ -75,10 +63,9 @@ describe('Symbol Ipsum', function() {
       var min    = 5,
           max    = 15,
           result = symbolIpsum.sentences();
-      
+
       expect(result[0].length).to.equal(1);
       verifySentences(result[0], result[1], min, max);
-
     });
     
     it('should generate random sentences with symbols parameters passed', function() {
@@ -88,7 +75,6 @@ describe('Symbol Ipsum', function() {
 
       expect(result[0].length).to.equal(2);
       verifySentences(result[0], result[1], min, max);
-
     });
 
     it('should generate random sentences with html entity encoding parameters passed', function() {
@@ -98,11 +84,8 @@ describe('Symbol Ipsum', function() {
 
       expect(result[0].length).to.equal(2);
       verifySentences(result[0],result[1],min,max);
-
     });
-
   });
-
 
   describe('generating paragraphs', function() {
 
@@ -114,7 +97,6 @@ describe('Symbol Ipsum', function() {
 
       expect(result[0].length).to.equal(2);
       verifyParagraph(result[0], result[1], numOfSentences, min, max);
-
     });
 
     it('should generate random paragraphs with symbols with a parameter passed', function() {
@@ -125,7 +107,6 @@ describe('Symbol Ipsum', function() {
 
       expect(result[0].length).to.equal(3);
       verifyParagraph(result[0], result[1], numOfSentences, min, max);
-
     });
 
     it('should generate random paragraphs with html entity encoding parameters passed', function() {
@@ -136,9 +117,6 @@ describe('Symbol Ipsum', function() {
 
       expect(result[0].length).to.equal(3);
       verifyParagraph(result[0], result[1], numOfSentences, min, max);
-
     });
-
   });
-
 });
